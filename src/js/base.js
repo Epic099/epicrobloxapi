@@ -12,13 +12,14 @@ function getCookie(name) {
 const adduniverse = document.getElementById("add_universe");
 adduniverse.addEventListener("click", function () {
   const input = prompt("Enter universe id")
+  console.log(getCookie('csrftoken'));
   if(!isNaN(input)){
     fetch('/api/add_universe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({universe_id: input, crsf_token: getCookie('csrftoken')}),
+      body: JSON.stringify({universe_id: input, csrf_token: getCookie('csrftoken')}),
     });
     window.location.href = `/universe/${input}`;
   }
