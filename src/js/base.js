@@ -19,7 +19,7 @@ adduniverse.addEventListener("click", function () {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({universe_id: input, csrf_token: getCookie('csrftoken')}),
+      body: JSON.stringify({universe_id: input, csrfmiddlewaretoken: getCookie('csrftoken')}),
     });
     window.location.href = `/universe/${input}`;
   }
