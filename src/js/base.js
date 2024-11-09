@@ -5,5 +5,6 @@ hamBurger.addEventListener("click", function () {
 
 const adduniverse = document.getElementById("add_universe");
 adduniverse.addEventListener("click", function () {
+  console.log("add universe clicked");
   const input = prompt("Enter universe id")
 });
