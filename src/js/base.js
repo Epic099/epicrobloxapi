@@ -14,7 +14,7 @@ adduniverse.addEventListener("click", function () {
   const input = prompt("Enter universe id")
   console.log(getCookie('csrftoken'));
   if(!isNaN(input)){
-    fetch('/api/add_universe', {
+    fetch('api/add_universe', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
