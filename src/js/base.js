@@ -27,6 +27,7 @@ function get_universes() {
     });
 }
 
+get_universes()
 
 const adduniverse = document.getElementById("add_universe");
 adduniverse.addEventListener("click", function () {
