@@ -12,16 +12,16 @@ function getCookie(name) {
 const adduniverse = document.getElementById("add_universe");
 adduniverse.addEventListener("click", function () {
   const input = prompt("Enter universe id")
-  console.log(getCookie('csrftoken'));
-  if(!isNaN(input)){
-    fetch('api/add_universe', {
+  const key = prompt("Input Api-Key");
+  if(!isNaN(input) && key != null){
+    const encodedKey = key.replace(/\+/gi, '%2B');
+    fetch(`api/add_universe`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         "X-CSRFToken": getCookie('csrftoken'),
       },
-      body: JSON.stringify({universe_id: input}),
+      body: JSON.stringify({universe_id: input, api_key: key}),
     });
-    window.location.href = `/universe/${input}`;
   }
 });
