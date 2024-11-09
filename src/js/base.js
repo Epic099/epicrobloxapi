@@ -20,11 +20,15 @@ function get_universes() {
     .then((response) => response.json())
     .then((data) => {
       const universe_list = document.querySelector(".sidebar-nav");
+      if (data.success == false) {
+        return;
+      }
       universe_list.innerHTML = "";
       console.log(data);
       data.universes.forEach((universe) => {
-        universe_list.innerHTML += `<li class="sidebar-item"><a href="/create" class="sidebar-link"><i class="lni lni-plus sidebar-image"></i><span>${universe["universe_id"]}</span></a></li>`;
+        universe_list.innerHTML += `<li class="sidebar-item"><a href="/create" class="sidebar-link"><i class="lni lni-plus sidebar-image"></i><span>${universe["universe_name"]} (${universe["universe_id"]})</span></a></li>`;
       });
+      universe_list.innerHTML += `<li class="sidebar-item"><a id="add_universe" class="sidebar-link"><i class="lni lni-plus"></i><span>Add Universe</span></a></li>`
     });
 }
 
