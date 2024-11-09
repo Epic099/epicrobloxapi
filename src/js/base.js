@@ -21,6 +21,7 @@ function get_universes() {
     .then((data) => {
       const universe_list = document.querySelector(".sidebar-nav");
       universe_list.innerHTML = "";
+      console.log(data);
       data.forEach((universe) => {
         universe_list.innerHTML += `<li class="sidebar-item"><a href="/create" class="sidebar-link"><i class="lni lni-plus sidebar-image"></i><span>${universe["universe_id"]}</span></a></li>`;
       });
