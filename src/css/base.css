@@ -30,6 +30,7 @@ body {
     overflow: hidden;
     transition: all 0.35s ease-in-out;
     background: url("https://cdn.statically.io/gh/Epic099/epicrobloxapi/main/src/img/background.jpg");
+    background-size: cover;
     color: white;
 }
 
