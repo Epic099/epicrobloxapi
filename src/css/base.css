@@ -29,7 +29,7 @@ body {
     width: 100%;
     overflow: hidden;
     transition: all 0.35s ease-in-out;
-    background: url("/staticfiles/images/purple_background.jpg");
+    background: url("https://cdn.statically.io/gh/Epic099/epicrobloxapi/main/src/img/background.jpg");
     color: white;
 }
 
